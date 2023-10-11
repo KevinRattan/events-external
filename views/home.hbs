@@ -1,19 +1,23 @@
-<ul >
-  {{#events}}
-    <li>
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-        <p>Location: {{ location }}</p>
-        <p>Likes: {{ likes }}
-        <form method="POST" action="/event/like">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="Like" class="btn btn-success">
-        </form>
-        <form method="POST" action="/event/unlike">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="UN-Like" class="btn btn-danger">
-        </form>
-        </p>
-    </li>
-  {{/events}}
-</ul>
+
+    {{#events}}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ title }}</h5>
+                <p class="card-text">{{ description }}</p>
+                <p class="card-text">Location: {{ location }}</p>
+                <p class="card-text">Likes: {{ likes }}</p>
+                <p class="card-text">
+                <form method="POST" action="/event/like">
+                    <input type="hidden" value="{{id}}" name="id">
+                    <input type="submit" value="Like" class="btn btn-success">
+                </form>
+                <form method="POST" action="/event/unlike">
+                    <input type="hidden" value="{{id}}" name="id">
+                    <input type="submit" value="UN-Like" class="btn btn-danger">
+                </form>
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/events}}
